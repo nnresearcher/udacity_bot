@@ -1,0 +1,15 @@
+TrajectoryPlannerROS:
+#
+  holonomic_robot: true
+  sim_time: 1.2 # The amount of time to forward-simulate trajectories in seconds
+  # Goal tolerance 
+  yaw_goal_tolerance: 0.05 #The tolerance in radians for the controller in yaw/rotation when achieving its goal
+  xy_goal_tolerance: 0.1 #The tolerance in meters for the controller in the x & y distance when achieving a goal
+  latch_xy_goal_tolerance: false
+
+  # Trajectory Scoring Parameters
+  meter_scoring: true 
+  pdist_scale:  1.8 # max 5.0  controller should stay close to the path it was given
+  gdist_scale:  1.4 # The weighting for how much the controller should attempt to reach its local goal, also controls speed, maximal possible value is 5.0
+  occdist_scale: 0.05 # The weighting for how much the controller should attempt to avoid obstacles
+  publish_cost_grid_pc: true
